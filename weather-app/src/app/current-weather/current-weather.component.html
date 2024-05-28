@@ -1,0 +1,14 @@
+<div class="outer-container">
+  <div class="container">
+    <h1>Current Weather</h1>
+    <input [(ngModel)]="city" placeholder="Enter city">
+    <button (click)="getWeather(city)">Get Weather</button>
+    <div *ngIf="weatherData">
+      <h2>Weather in {{ weatherData.name }}</h2>
+      <p>Temperature: {{ weatherData.main.temp }}°C</p>
+      <p>Weather: {{ weatherData.weather[0].description }}</p>
+    </div>
+  </div>
+</div>
+
+  

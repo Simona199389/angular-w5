@@ -1,0 +1,57 @@
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+h1,h2{
+  text-align: center;
+}
+
+.container {
+  max-width: 1000px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+}
+
+input {
+  margin: 5px;
+  padding: 10px;
+  font-size: 1em;
+  width: calc(50% - 12px);
+}
+
+button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 1em;
+  cursor: pointer;
+}
+
+.forecast-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.forecast {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.forecast h3 {
+  margin: 0 0 5px;
+  font-size: 1em;
+}
+
+.forecast p {
+  margin: 3px 0;
+  font-size: 0.9em;
+}

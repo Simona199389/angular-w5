@@ -1,0 +1,25 @@
+<div class="outer-container">
+  <div class="container">
+      <h1>Weekly Weather Forecast</h1>
+      <input [(ngModel)]="lat" placeholder="Enter latitude">
+      <input [(ngModel)]="lon" placeholder="Enter longitude">
+      <button (click)="getForecast(lat, lon)">Get Weather</button>
+      
+      <div *ngIf="weatherData">
+          <h2>Weather in {{ weatherData.city.name }}</h2>
+          
+          <div class="forecast-container">
+              <div class="forecast" *ngFor="let forecast of weatherData.list">
+                  <h3>{{ forecast.dt_txt }}</h3>
+                  <p>Temperature: {{ (forecast.main.temp - 273.15) | number:'1.2-2' }}°C</p>
+                  <p>Feels Like: {{ (forecast.main.feels_like - 273.15) | number:'1.2-2' }}°C</p>
+                  <p>Weather: {{ forecast.weather[0].description }}</p>
+                  <p>Humidity: {{ forecast.main.humidity }}%</p>
+                  <p>Wind: {{ forecast.wind.speed }} m/s from {{ forecast.wind.deg }}° with gusts up to {{ forecast.wind.gust }} m/s</p>
+                  <p *ngIf="forecast.rain">Rain: {{ forecast.rain['3h'] }} mm in the last 3 hours</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
